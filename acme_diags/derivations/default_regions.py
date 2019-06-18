@@ -50,15 +50,15 @@ regions_specs = {
     'ASM': {'domain': cdutil.region.domain(latitude=(0., 45., 'ccb'), longitude=(60., 180., 'ccb'))},
     # Australian Monsoon
     'AUSM': {'domain': cdutil.region.domain(latitude=(-45., 0., 'ccb'), longitude=(90., 160., 'ccb'))},
-    # ARM sites coordinates
+    # ARM sites coordinates, select nearest grid poit to ARM site coordinates
     # Southern Great Plain site -97.5  ,   36.4 
-    'sgp': {'domain': cdutil.region.domain(latitude=(36.4-1.5, 36.4+1.5, 'ccb'), longitude=(-97.5-1.5, -97.5+1.5, 'ccb'))},
+    'sgp': {'domain': cdutil.region.domain(latitude=(36.4, 36.4, 'cob'), longitude=(-97.5, -97.5, 'cob'))},
     # North Slope of Alaska site -156.6  ,   71.3 
-    'nsa': {'domain': cdutil.region.domain(latitude=(71.3-1.5, 71.3+1.5, 'ccb'), longitude=(-156.6-1.5, -156.6+1.5, 'ccb'))},
+    'nsa': {'domain': cdutil.region.domain(latitude=(71.3, 71.3, 'cob'), longitude=(-156.6, -156.6, 'cob'))},
     # Manus ARM 147.4  ,   -2.1
-    'twpc1': {'domain': cdutil.region.domain(latitude=(-2.1-1.5, -2.1+1.5, 'ccb'), longitude=(147.4-1.5, 147.4+1.5, 'ccb'))},
+    'twpc1': {'domain': cdutil.region.domain(latitude=(-2.1, -2.1, 'cob'), longitude=(147.4, 147.4, 'cob'))},
     # Nauru ARM 166.9  ,   -0.5
-    'twpc2': {'domain': cdutil.region.domain(latitude=(-0.5-1.5, -0.5+1.5, 'ccb'), longitude=(166.9 - 1.5,166.9+1.5, 'ccb'))},
+    'twpc2': {'domain': cdutil.region.domain(latitude=(-0.5, -0.5, 'cob'), longitude=(166.9,166.9, 'cob'))},
     # Darwin ARM 130.9  ,  -12.4
-    'twpc2': {'domain': cdutil.region.domain(latitude=(-12.4-1.5, -12.4+1.5, 'ccb'), longitude=(130.9 - 1.5,130.9+1.5, 'ccb'))},
+    'twpc2': {'domain': cdutil.region.domain(latitude=(-12.4, -12.4, 'cob'), longitude=(130.9 ,130.9, 'cob'))},
 }
