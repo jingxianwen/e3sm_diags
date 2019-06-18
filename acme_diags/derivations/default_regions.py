@@ -50,4 +50,15 @@ regions_specs = {
     'ASM': {'domain': cdutil.region.domain(latitude=(0., 45., 'ccb'), longitude=(60., 180., 'ccb'))},
     # Australian Monsoon
     'AUSM': {'domain': cdutil.region.domain(latitude=(-45., 0., 'ccb'), longitude=(90., 160., 'ccb'))},
+    # ARM sites coordinates
+    # Southern Great Plain site -97.5  ,   36.4 
+    'sgp': {'domain': cdutil.region.domain(latitude=(36.4-1.5, 36.4+1.5, 'ccb'), longitude=(-97.5-1.5, -97.5+1.5, 'ccb'))},
+    # North Slope of Alaska site -156.6  ,   71.3 
+    'nsa': {'domain': cdutil.region.domain(latitude=(71.3-1.5, 71.3+1.5, 'ccb'), longitude=(-156.6-1.5, -156.6+1.5, 'ccb'))},
+    # Manus ARM 147.4  ,   -2.1
+    'twpc1': {'domain': cdutil.region.domain(latitude=(-2.1-1.5, -2.1+1.5, 'ccb'), longitude=(147.4-1.5, 147.4+1.5, 'ccb'))},
+    # Nauru ARM 166.9  ,   -0.5
+    'twpc2': {'domain': cdutil.region.domain(latitude=(-0.5-1.5, -0.5+1.5, 'ccb'), longitude=(166.9 - 1.5,166.9+1.5, 'ccb'))},
+    # Darwin ARM 130.9  ,  -12.4
+    'twpc2': {'domain': cdutil.region.domain(latitude=(-12.4-1.5, -12.4+1.5, 'ccb'), longitude=(130.9 - 1.5,130.9+1.5, 'ccb'))},
 }
