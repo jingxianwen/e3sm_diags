@@ -50,15 +50,16 @@ regions_specs = {
     'ASM': {'domain': cdutil.region.domain(latitude=(0., 45., 'ccb'), longitude=(60., 180., 'ccb'))},
     # Australian Monsoon
     'AUSM': {'domain': cdutil.region.domain(latitude=(-45., 0., 'ccb'), longitude=(90., 160., 'ccb'))},
+}
+
+    #
+points_specs = {
     # ARM sites coordinates, select nearest grid poit to ARM site coordinates
-    # Southern Great Plain site -97.5  ,   36.4 
-    'sgp': {'domain': cdutil.region.domain(latitude=(36.4, 36.4, 'cob'), longitude=(-97.5, -97.5, 'cob'))},
-    # North Slope of Alaska site -156.6  ,   71.3 
-    'nsa': {'domain': cdutil.region.domain(latitude=(71.3, 71.3, 'cob'), longitude=(-156.6, -156.6, 'cob'))},
-    # Manus ARM 147.4  ,   -2.1
-    'twpc1': {'domain': cdutil.region.domain(latitude=(-2.1, -2.1, 'cob'), longitude=(147.4, 147.4, 'cob'))},
-    # Nauru ARM 166.9  ,   -0.5
-    'twpc2': {'domain': cdutil.region.domain(latitude=(-0.5, -0.5, 'cob'), longitude=(166.9,166.9, 'cob'))},
-    # Darwin ARM 130.9  ,  -12.4
-    'twpc2': {'domain': cdutil.region.domain(latitude=(-12.4, -12.4, 'cob'), longitude=(130.9 ,130.9, 'cob'))},
+    # Each point is supplied with [latitude, longitude,select method, description of the point]
+    'sgp': [36.4, -97.5,'cob','97.5W 36.4N Oklahoma ARM'],
+    'nsa': [71.3, -156.6,'cob','156.6W 71.3N Barrow ARM'],
+    'twpc1': [-2.1, 147.4,'cob','147.4E 2.1S Manus ARM'],
+    'twpc2': [-0.5, 166.9,'cob', '166.9E 0.5S Nauru ARM'],
+    'twpc3': [-12.4, 130.9,'cob','130.9E 12.4S Darwin ARM'],
+
 }

@@ -31,19 +31,13 @@ def run_diag(parameter):
     #    raise RuntimeError(msg)
 
     for region in regions:
+        # The regions that are supported are in acme_diags/derivations/default_regions.py
+        # You can add your own if it's not in there.
         print("Selected region: {}".format(region))
         regions_to_data = collections.OrderedDict()
-        # Get land/ocean fraction for masking.
-        # For now, we're only using the climo data that we saved below.
-        # So no time-series LANDFRAC or OCNFRAC from the user is used.
-        mask_path = os.path.join(acme_diags.INSTALL_PATH, 'acme_ne30_ocean_land_mask.nc')
-        with cdms2.open(mask_path) as f:
-            land_frac = f('LANDFRAC')
-            ocean_frac = f('OCNFRAC')
 
         for var in variables:
             print('Variable: {}'.format(var))
-
             test_data = utils.dataset.Dataset(parameter, test=True)
             test = test_data.get_timeseries_variable(var)
             
@@ -60,7 +54,6 @@ def run_diag(parameter):
             for ref_name in ref_names:    
                 setattr(parameter, 'ref_name', ref_name)
                 ref_data = utils.dataset.Dataset(parameter, ref=True)
-                print(dir(ref_data))
             
                 parameter.ref_name_yrs = utils.general.get_name_and_yrs(parameter, ref_data)
 
@@ -71,14 +64,11 @@ def run_diag(parameter):
                 
                 # TODO: Will this work if ref and test are timeseries data,
                 # but land_frac and ocean_frac are climo'ed.
-                test_domain, ref_domain = utils.general.select_region(
-                    region, test, ref, land_frac, ocean_frac, parameter)
+                print(ref_name)
+                test_domain = utils.general.select_point(region, test)
+                ref_domain = utils.general.select_point(region, ref)
 
-                # Average over selected region, and average
-                # over months to get the yearly mean.
-                test_domain = cdutil.averager(test_domain,axis = 'xy')
                 test_domain_year = cdutil.ANNUALCYCLE(test_domain)
-                ref_domain = cdutil.averager(ref_domain,axis = 'xy')
                 ref_domain_year = cdutil.ANNUALCYCLE(ref_domain)
                 ref_domain_year.ref_name = ref_name
 
@@ -91,9 +81,8 @@ def run_diag(parameter):
 
             result = RefsTestMetrics(test=test_domain_year, refs=refs, metrics=metrics_dict)
             regions_to_data[region] = result
-            print(result)
  
-#        area_mean_time_series_plot.plot(var, regions_to_data, parameter)
+        area_mean_time_series_plot.plot(var, regions_to_data, parameter)
         # TODO: How will this work when there are a bunch of plots for each image?
         # Yes, these files should be saved.
         # utils.general.save_ncfiles(parameter.current_set,
