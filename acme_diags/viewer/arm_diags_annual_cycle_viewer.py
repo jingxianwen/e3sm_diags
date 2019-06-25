@@ -31,6 +31,7 @@ def create_viewer(root_dir,parameter):
     if not os.path.exists(new_dir):
         os.makedirs(new_dir)
     index_file = os.path.join(new_dir, 'index.html')
+    url = os.path.join(set_name,'index.html')
 
     f = open(index_file,'w')
     
@@ -94,8 +95,11 @@ def create_viewer(root_dir,parameter):
     
     </html>"""
 
+
+
     f.write(message)
     f.close()
+
 
 
 
@@ -122,8 +126,6 @@ def create_viewer(root_dir,parameter):
 #                meta=create_metadata(param))
 #
 #    url = viewer.generate_page()
-    url = 'index.html'
-    add_header(root_dir, os.path.join(root_dir, url), parameter)
-    h1_to_h3(os.path.join(root_dir, url))
+    
 
     return display_name, url
