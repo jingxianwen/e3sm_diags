@@ -5,7 +5,7 @@ import cdutil
 import acme_diags
 from acme_diags.driver import utils
 from acme_diags.metrics import mean
-from acme_diags.plot.cartopy import area_mean_time_series_plot
+from acme_diags.plot.cartopy import arm_diags_annual_cycle_plot
 
 RefsTestMetrics = collections.namedtuple('RefsTestMetrics', ['refs', 'test', 'metrics'])
 
@@ -34,7 +34,7 @@ def run_diag(parameter):
         # The regions that are supported are in acme_diags/derivations/default_regions.py
         # You can add your own if it's not in there.
         print("Selected region: {}".format(region))
-        regions_to_data = collections.OrderedDict()
+        vars_to_data = collections.OrderedDict()
 
         for var in variables:
             print('Variable: {}'.format(var))
@@ -48,6 +48,8 @@ def run_diag(parameter):
             parameter.viewer_descr[var] = getattr(test, 'long_name', var)
             # Get the name of the data, appended with the years averaged.
             parameter.test_name_yrs = utils.general.get_name_and_yrs(parameter, test_data)
+            parameter.var_name = getattr(test, 'long_name', var)
+            parameter.var_units = getattr(test, 'units', var)
 
             refs = []
 
@@ -80,9 +82,11 @@ def run_diag(parameter):
             # print(test.getTime().asComponentTime())
 
             result = RefsTestMetrics(test=test_domain_year, refs=refs, metrics=metrics_dict)
-            regions_to_data[region] = result
+            vars_to_data = result
+   
+            #Compute and save stddev and correlation coefficient of models,for taylor diagram
  
-        area_mean_time_series_plot.plot(var, regions_to_data, parameter)
+        arm_diags_annual_cycle_plot.plot(var, vars_to_data, parameter)
         # TODO: How will this work when there are a bunch of plots for each image?
         # Yes, these files should be saved.
         # utils.general.save_ncfiles(parameter.current_set,
