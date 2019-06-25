@@ -3,7 +3,7 @@ from .core_parameter import CoreParameter
 
 class ARMDiagsAnnualCycleParameter(CoreParameter):
     def __init__(self):
-        super(ARMDiagsAnnualCycleParameter, self).__init__()
+        super().__init__()
         # A list of the reference names to run the diags on.
         self.ref_names = []
         # Granulating with regions doesn't make sense,

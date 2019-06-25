@@ -85,7 +85,6 @@ def run_diag(parameter):
             vars_to_data = result
    
             #Compute and save stddev and correlation coefficient of models,for taylor diagram
- 
         arm_diags_annual_cycle_plot.plot(var, vars_to_data, parameter)
         # TODO: How will this work when there are a bunch of plots for each image?
         # Yes, these files should be saved.
