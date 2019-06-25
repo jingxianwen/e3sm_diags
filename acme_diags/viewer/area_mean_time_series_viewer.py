@@ -35,6 +35,5 @@ def create_viewer(root_dir, parameters):
     url = viewer.generate_page()
     add_header(root_dir, os.path.join(root_dir, url), parameters)
     h1_to_h3(os.path.join(root_dir, url))
-    print(display_name,url)
 
     return display_name, url
