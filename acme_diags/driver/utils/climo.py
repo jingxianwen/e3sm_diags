@@ -59,16 +59,21 @@ def climo(var, season):
                           for i in range(len(var_time_absolute)) ], dtype=np.int).nonzero()
         climo[n] = ma.average(v[idx], axis=0, weights=dt[idx])
 
-
-    trans_var = cdms2.createVariable(climo)(squeeze=1)
+    print(climo.shape)
+    trans_var = cdms2.createVariable(climo)#(squeeze=1)
     # Losing the grid after a squeeze is normal, we need to set it again.
     trans_var.setGrid(var.getGrid())
     # Set the correct axis as well.
-    trans_var.setAxis(0, var.getAxis(1))
-    trans_var.setAxis(1, var.getAxis(2))
+#    trans_var.setAxis(0, var.getAxis(1))
+#    trans_var.setAxis(1, var.getAxis(2))
+#    if var.getLevel():
+#        # If it's a 3D variable, set the last axis.
+#        trans_var.setAxis(2, var.getAxis(3))
+    trans_var.setAxis(1, var.getAxis(1))
+    trans_var.setAxis(2, var.getAxis(2))
     if var.getLevel():
         # If it's a 3D variable, set the last axis.
-        trans_var.setAxis(2, var.getAxis(3))
+        trans_var.setAxis(3, var.getAxis(3))
     
     # Copy any missing attributes from var to trans_var.
     # The below doesn't work, since MaskedArrays apparently

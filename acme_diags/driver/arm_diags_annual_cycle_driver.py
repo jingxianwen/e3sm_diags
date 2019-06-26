@@ -39,11 +39,15 @@ def run_diag(parameter):
         for var in variables:
             print('Variable: {}'.format(var))
             test_data = utils.dataset.Dataset(parameter, test=True)
-            test = test_data.get_timeseries_variable(var)
-            
-            # Make sure data have correct montly Bounds
-            cdutil.setTimeBoundsMonthly(test)
+            #method 1, use built-in climo.py function to generate climatology, we know exactly about the algorithm
+            test = test_data.get_climo_variable(var,'ANNUALCYCLE')
             print('test shape',test.shape, test.units)
+            
+            #method 2, use cdutil.ANNUALCYCLE.
+            #test = test_data.get_timeseries_variable(var)
+            ## Make sure data have correct montly Bounds
+            #cdutil.setTimeBoundsMonthly(test)
+            #print('test shape',test.shape, test.units)
 
             parameter.viewer_descr[var] = getattr(test, 'long_name', var)
             # Get the name of the data, appended with the years averaged.
@@ -58,10 +62,9 @@ def run_diag(parameter):
                 ref_data = utils.dataset.Dataset(parameter, ref=True)
             
                 parameter.ref_name_yrs = utils.general.get_name_and_yrs(parameter, ref_data)
-
-                ref = ref_data.get_timeseries_variable(var)
-
-                cdutil.setTimeBoundsMonthly(ref)
+                ref = ref_data.get_climo_variable(var,'ANNUALCYCLE')
+                #ref = ref_data.get_timeseries_variable(var)
+                #cdutil.setTimeBoundsMonthly(ref)
  
                 
                 # TODO: Will this work if ref and test are timeseries data,
@@ -70,8 +73,10 @@ def run_diag(parameter):
                 test_domain = utils.general.select_point(region, test)
                 ref_domain = utils.general.select_point(region, ref)
 
-                test_domain_year = cdutil.ANNUALCYCLE(test_domain)
-                ref_domain_year = cdutil.ANNUALCYCLE(ref_domain)
+                #test_domain_year = cdutil.ANNUALCYCLE(test_domain)
+                test_domain_year = test_domain
+                #ref_domain_year = cdutil.ANNUALCYCLE(ref_domain)
+                ref_domain_year = ref_domain
                 ref_domain_year.ref_name = ref_name
 
                 refs.append(ref_domain_year)
