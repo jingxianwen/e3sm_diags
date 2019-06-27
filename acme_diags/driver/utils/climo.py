@@ -35,8 +35,10 @@ def climo(var, season):
         return var
 
     tbounds = var_time.getBounds()
+ 
     var_time[:] = 0.5*(tbounds[:,0]+tbounds[:,1])
     var_time_absolute = var_time.asComponentTime()
+    print(var_time_absolute)
 
     # Compute time length
     dt = tbounds[:,1] - tbounds[:,0]
@@ -57,9 +59,9 @@ def climo(var, season):
     for n in range(ncycle):
         idx = np.array( [ season_idx[cycle[n]][var_time_absolute[i].month-1]
                           for i in range(len(var_time_absolute)) ], dtype=np.int).nonzero()
+        #climo[n] = ma.average(v[idx], axis=0)
         climo[n] = ma.average(v[idx], axis=0, weights=dt[idx])
 
-    print(climo.shape)
     trans_var = cdms2.createVariable(climo)#(squeeze=1)
     # Losing the grid after a squeeze is normal, we need to set it again.
     trans_var.setGrid(var.getGrid())
