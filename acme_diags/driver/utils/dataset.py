@@ -76,7 +76,7 @@ class Dataset():
         if not self.is_timeseries():
             msg = 'You can only use this function with timeseries data.'
             raise RuntimeError(msg)
-        
+
         if self.ref:
             # Get the reference variable from timeseries files.
             data_path = self.parameters.reference_data_path
@@ -196,7 +196,7 @@ class Dataset():
             filename = self.get_ref_filename_climo(season)
         else:
             filename = self.get_test_filename_climo(season)
-        
+
         with cdms2.open(filename) as f:
             return f.getglobal(attr)
 
@@ -354,14 +354,14 @@ class Dataset():
                 # All of the variables (list_of_vars) are in data_file.
                 # Return the corresponding dict.
                 return {list_of_vars: vars_to_func_dict[list_of_vars]}
-        
+
         # None of the entries in the derived vars dictionary work,
         # so try to get the var directly.
         # Only try this if var actually exists in data_file.
         if var in data_file.variables:
             # The below will just cause var to get extracted from the data_file.
             return {(var,): lambda x: x}
-        
+
         # Otherwise, there's no way to get the variable.
         msg = 'Neither does {} nor the variables in {}'.format(var, possible_vars)
         msg += ' exist in the file {}.'.format(data_file.uri)
@@ -484,7 +484,7 @@ class Dataset():
                 # All of the variables (list_of_vars) have files in data_path.
                 # Return the corresponding dict.
                 return {list_of_vars: vars_to_func_dict[list_of_vars]}
-    
+
         # None of the entries in the derived vars dictionary are valid,
         # so try to get the var directly.
         # Only try this if there is a corresponding file for var in data_path.
@@ -526,7 +526,7 @@ class Dataset():
             msg = 'For the variable {} you have two timeseries files in the '.format(var)
             msg += 'directory: {} This currently isn\'t supported.'.format(data_path)
             raise RuntimeError(msg)
-        
+
         # If nothing was found, try looking for the file with
         # the ref_name prepended to it.
         ref_name = getattr(self.parameters, 'ref_name', '')
@@ -565,7 +565,7 @@ class Dataset():
         for var in vars_to_get:
             v = self._get_var_from_timeseries_file(var, data_path)
             variables.append(v)
-        
+
         return variables
 
 

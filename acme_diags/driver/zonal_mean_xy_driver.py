@@ -28,7 +28,6 @@ def regrid_to_lower_res_1d(mv1, mv2):
     axis1 = mv1.getAxisList()[0]
     axis2 = mv2.getAxisList()[0]
 
-
     if len(axis1) <= len(axis2):
         missing = mv2.get_fill_value()
         mv1_reg = mv1
@@ -85,13 +84,13 @@ def run_diag(parameter):
     regions = parameter.regions
 
     test_data = utils.dataset.Dataset(parameter, test=True)
-    ref_data = utils.dataset.Dataset(parameter, ref=True)    
+    ref_data = utils.dataset.Dataset(parameter, ref=True)
 
     for season in seasons:
         # Get the name of the data, appended with the years averaged.
         parameter.test_name_yrs = utils.general.get_name_and_yrs(parameter, test_data, season)
         parameter.ref_name_yrs = utils.general.get_name_and_yrs(parameter, ref_data, season)
-        
+
         for var in variables:
             print('Variable: {}'.format(var))
             parameter.var_id = var

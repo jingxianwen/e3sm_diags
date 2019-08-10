@@ -14,15 +14,26 @@ class Run():
     A class is needed because we often need to store some
     state regarding what we need to run, like the sets selected.
     """
+
     def __init__(self):
         self.sets_to_run = CoreParameter().sets
         self.parser = CoreParser()
-
 
     def run_diags(self, parameters):
         """
         Based on sets_to_run, run the diags with the list of parameters.
         """
+
+        if (len(parameters) > 1):
+            # Create a new parameter and copy core parameters found in parameters[0] (first in the list)
+            # The overwrite the paramaters for this class
+            # This will get "Global" parameters defined in parameters[0] in this class.
+            for i in range(1, len(parameters)):
+                param = parameters[i]
+                new_param = param.__class__()  # New instance.
+                self.parser.combine_params(orig_parameters=parameters[0], other_parameters=[new_param], vars_to_ignore=['seasons'])
+                self.parser.combine_params(orig_parameters=param, other_parameters=[new_param], vars_to_ignore=['seasons'])
+                parameters[i] = new_param
         final_params = self.get_final_parameters(parameters)
         if not final_params:
             msg = 'No parameters we able to be extracted.'
@@ -30,7 +41,6 @@ class Run():
             raise RuntimeError(msg)
 
         main(final_params)
-
 
     def get_final_parameters(self, parameters):
         """
@@ -40,7 +50,7 @@ class Run():
         if not parameters or not isinstance(parameters, list):
             msg = 'You must pass in a list of parameter objects.'
             raise RuntimeError(msg)
-        
+
         # For each of the passed in parameters, we can only have one of
         # each type.
         types = set([p.__class__ for p in parameters])
@@ -48,7 +58,7 @@ class Run():
             msg = 'You passed in two or more parameters of the same type.'
             raise RuntimeError(msg)
 
-        self._add_parent_attrs_to_children(parameters)
+#        self._add_parent_attrs_to_children(parameters)
 
         final_params = []
 
@@ -64,8 +74,8 @@ class Run():
             param.sets = [set_name]
 
             params = self.parser.get_parameters(orig_parameters=param, other_parameters=other_params,
-                cmd_default_vars=False, argparse_vals_only=False)
-           
+                                                cmd_default_vars=False, argparse_vals_only=False)
+
             # Makes sure that any parameters that are selectors
             # will be in param.
             self._add_attrs_with_default_values(param)
@@ -80,12 +90,11 @@ class Run():
 
         return final_params
 
-
     def _add_parent_attrs_to_children(self, parameters):
         """
         For any parameter class that's inherited from another, copy
         the attributes of the parent to the child.
-        
+
         Ex: If the user wants to run set-specific parameters for
         'zonal_mean_2d', they'd pass in a ZonalMean2dParameter
         and a CoreParameter.
@@ -102,7 +111,7 @@ class Run():
                 parent = self._get_instance_of_param_class(parent_class, parameters)
             except RuntimeError:
                 parent = None
-            
+
             return parent
 
         for i in range(len(parameters)):
@@ -119,7 +128,6 @@ class Run():
             self._remove_attrs_with_default_values(parent)
             parameters[i] += parent
 
-
     def _add_attrs_with_default_values(self, param):
         """
         In the param, add any missing parameters
@@ -130,11 +138,10 @@ class Run():
             # Ignore any of the hidden attributes.
             if attr.startswith('_'):
                 continue
-            
+
             if not hasattr(param, attr):
                 val = getattr(new_instance, attr)
                 setattr(param, attr, val)
-    
 
     def _remove_attrs_with_default_values(self, param):
         """
@@ -146,11 +153,10 @@ class Run():
             # Ignore any of the hidden attributes.
             if attr.startswith('_'):
                 continue
-            
-            if hasattr(new_instance, attr) and \
-                getattr(new_instance, attr) == getattr(param, attr):
-                delattr(param, attr)
 
+            if hasattr(new_instance, attr) and \
+                    getattr(new_instance, attr) == getattr(param, attr):
+                delattr(param, attr)
 
     def _get_instance_of_param_class(self, cls, parameters):
         """
@@ -172,10 +178,9 @@ class Run():
             for p in parameters:
                 if type(p) == cls_type:
                     return p
-        
+
         msg = "There's weren\'t any class of types {} in your parameters."
         raise RuntimeError(msg.format(class_types))
-
 
     def _get_other_diags(self, run_type):
         """
@@ -195,9 +200,8 @@ class Run():
         # using the parameter classes in SET_TO_PARAMETERS.
         for i in range(len(params)):
             params[i] = SET_TO_PARAMETERS[params[i].sets[0]]() + params[i]
-        
+
         return params
 
 
 runner = Run()
-
