@@ -24,16 +24,6 @@ class Run():
         Based on sets_to_run, run the diags with the list of parameters.
         """
 
-        if (len(parameters) > 1):
-            # Create a new parameter and copy core parameters found in parameters[0] (first in the list)
-            # The overwrite the paramaters for this class
-            # This will get "Global" parameters defined in parameters[0] in this class.
-            for i in range(1, len(parameters)):
-                param = parameters[i]
-                new_param = param.__class__()  # New instance.
-                self.parser.combine_params(orig_parameters=parameters[0], other_parameters=[new_param], vars_to_ignore=['seasons'])
-                self.parser.combine_params(orig_parameters=param, other_parameters=[new_param], vars_to_ignore=['seasons'])
-                parameters[i] = new_param
         final_params = self.get_final_parameters(parameters)
         if not final_params:
             msg = 'No parameters we able to be extracted.'
@@ -58,7 +48,7 @@ class Run():
             msg = 'You passed in two or more parameters of the same type.'
             raise RuntimeError(msg)
 
-#        self._add_parent_attrs_to_children(parameters)
+        self._add_parent_attrs_to_children(parameters)
 
         final_params = []
 
@@ -126,7 +116,12 @@ class Run():
             # make a deepcopy first.
             parent = copy.deepcopy(parent)
             self._remove_attrs_with_default_values(parent)
-            parameters[i] += parent
+            for attr in dir(parent):
+                if not attr.startswith('_') and not hasattr(parameters[i], attr):
+                    # This attr of parent is a user-defined one and does not
+                    # already exist in the parameters[i] parameter object.
+                    attr_value = getattr(parent, attr)
+                    setattr(parameters[i], attr, attr_value)
 
     def _add_attrs_with_default_values(self, param):
         """
