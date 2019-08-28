@@ -27,7 +27,7 @@ def run_diag(parameter):
     # Both input data sets must be time-series files.
     # Raising an error will cause this specific set of
     # diagnostics with these parameters to be skipped.
-    # if test_data.is_climo() or ref_data.is_climo():I am thinking about signing the offer Monday.
+    # if test_data.is_climo() or ref_data.is_climo():
     #    msg = 'Cannot run the plotset regional_mean_time_series '
     #    msg += 'because both the test and ref data need to be time-series files.'
     #    raise RuntimeError(msg)
