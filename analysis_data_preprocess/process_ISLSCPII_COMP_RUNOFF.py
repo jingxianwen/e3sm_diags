@@ -10,11 +10,134 @@ import glob
 import numpy
 import cdutil
 from cdms2.tvariable import TransientVariable
+import datetime
+import numpy
+from calendar import monthrange
 
-def writeANNFiles(data, year):
+
+
+def createTimeAxisYear(year):
+    import pdb
+    pdb.set_trace()
+    fmt = '%Y.%m.%d %H:%M:%S'
+    BOUNDS=[]
+    ss = '{:04d}.01.01 00:00:00'.format(year) 
+    date = datetime.datetime.strptime(ss, fmt) 
+    BOUNDS.append(date.timetuple().tm_yday-1) 
+    ss = '{:04d}.12.31 23:59:59'.format(year) 
+    date = datetime.datetime.strptime(ss, fmt) 
+    BOUNDS.append(date.timetuple().tm_yday-1)  
+    ### Compute center time
+    CENTER=(BOUNDS[0]+BOUNDS[1])/2. -1
+    time = cdms2.createAxis([CENTER])
+    time.units = 'days since {:04d}'.format(year)
+    time._bounds_ = numpy.array(BOUNDS)
+    time.designateTime()
+    time.id = "time"
+    return time
+
+def createTimeAxisSeasons(startYear, endYear):
+    fmt = '%Y.%m.%d %H:%M:%S'
+    BOUNDS=[]
+    for year in range(startYear, endYear, extended=False):
+        # Start in January 
+        for i in range(1,4): 
+            if i is 1 and year == startYear:
+                nbMonths = 2
+            else:
+                nbMonths = 3
+
+            monthbounds=[]
+            # [1, 3, 6, 9]
+            startSeasonMonth =  (i-1) * nbMonths
+            if startSeasonMonth == 0:  
+                startSeasonMonth = 1 
+
+            s = '{:04d}.{:02d}.01 00:00:00'.format(year, startSeasonMonth) 
+            date = datetime.datetime.strptime(s, fmt) 
+            monthbounds.append(date.timetuple().tm_yday-1) 
+            # Exception: JF first season of the star tyear
+            s = '{:04d}.{:02d}.01 00:00:00'.format(year, startSeasonMonth + nbMonths) 
+            date = datetime.datetime.strptime(s, fmt) 
+            monthbounds.append(date.timetuple().tm_yday-1)  
+            BOUNDS.append(monthbounds)
+        ### add last bounds 
+        BOUNDS.append([BOUNDS[-1][1], 365])
+        BOUNDS=numpy.array(BOUNDS)
+        print(BOUNDS)
+        ### Compute center time
+        CENTER=(BOUNDS[:,0]+BOUNDS[:,1])/2. -1 
+
+        time = cdms2.createAxis(CENTER)
+        time.units = 'days since {:04d}'.format(year)
+        time._bounds_ = BOUNDS
+        time.designateTime()
+        time.id = "time"
+    return time
+
+def createTimeAxisMonths(year, startMonth=1, endMonth=12):
+    fmt = '%Y.%m.%d %H:%M:%S'
+    BOUNDS=[]
+    # import pdb
+    # pdb.set_trace()
+
+    for i in range(startMonth,endMonth): 
+        monthbounds=[]
+        s = '{:04d}.{:02d}.01 00:00:00'.format(year, i) 
+        date = datetime.datetime.strptime(s, fmt) 
+        monthbounds.append(date.timetuple().tm_yday-1) 
+        s = '{:04d}.{:02d}.01 00:00:00'.format(year, i+1) 
+        date = datetime.datetime.strptime(s, fmt) 
+        monthbounds.append(date.timetuple().tm_yday-1)  
+        BOUNDS.append(monthbounds)
+    if startMonth == endMonth:
+        monthbounds=[]
+        i = startMonth
+        s = '{:04d}.{:02d}.01 00:00:00'.format(year, i)
+        date = datetime.datetime.strptime(s, fmt)
+        monthbounds.append(date.timetuple().tm_yday-1)
+        if i+1 == 13:
+            s = '{:04d}.{:02d}.31 23:59:59'.format(year, i) 
+        else:
+            s = '{:04d}.{:02d}.01 00:00:00'.format(year, i+1) 
+        date = datetime.datetime.strptime(s, fmt) 
+        monthbounds.append(date.timetuple().tm_yday-1)  
+        BOUNDS.append(monthbounds)
+        BOUNDS=numpy.array(BOUNDS[0])  # Only 1 bounds
+        CENTER=[(BOUNDS[0]+BOUNDS[1])/2. -1 ]
+    else:
+        ### add last bounds 
+        lastDay = monthrange(year,i+1)[1]
+        s = '{:04d}.{:02d}.{:02d} 00:00:00'.format(year, i+1, lastDay) 
+        date = datetime.datetime.strptime(s, fmt) 
+        BOUNDS.append([BOUNDS[-1][1], date.timetuple().tm_yday-1])
+        BOUNDS=numpy.array(BOUNDS)
+        ### Compute center time
+        CENTER=(BOUNDS[:,0]+BOUNDS[:,1])/2. -1 
+    time = cdms2.createAxis(CENTER)
+    time.units = 'days since {:04d}'.format(year)
+    time._bounds_ = BOUNDS
+    time.designateTime()
+    time.id = "time"
+    return time
+
+def writeANNFiles(data, annualCycle):
+    import pdb
+    pdb.set_trace()
     out_file = cdms2.open(data.id+"_v0.1_ANN_climo.nc", mode='w')
     #Extrac information 
-    out_file.write(year)
+    axes, attributes, id, grid = extractMetadata(data)
+    
+    # Create new data with new time axis
+    yearCycle = annualCycle.asma()
+    yearCycle.units = data.units   #converted from mm/month
+    yearCycle.id = data.id #runoff flux for cmip
+
+    year    = data.getTime().asComponentTime()[0].year  # Get the Year from input data file
+    time    = createTimeAxisYear(year)
+    axes[0] = time
+    outdata = TransientVariable( yearCycle, axes=axes, attributes=attributes, id=data.id, grid=grid)
+    out_file.write(outdata)
     out_file.close()
 
 
@@ -56,12 +179,9 @@ def writeCLIMOFiles(data, annualcycle):
         annualcycleMonth.units = data.units   #converted from mm/month
         annualcycleMonth.id = data.id #runoff flux for cmip
 
-        # Extract time axis with boudns
-        time = cdms2.createAxis([annualtime[i]])
-        time.units = annualtime.units
-        time._bounds_ = annualtime._bounds_[i]
-        time.designateTime()
-        time.id = "time"
+        month = annualtime.asComponentTime()[i].month
+        year  = data.getTime().asComponentTime()[0].year  # Get the Year from input data file
+        time = createTimeAxisMonths(year, month, month)
 
         # Create anew cdms2 Variable
         axes[0] = time
@@ -106,8 +226,8 @@ data=in_file('QRUNOFF')
 annualcycle=cdutil.ANNUALCYCLE.climatology(data, criteriaarg = [0.99,None])
 seasonalcycle = cdutil.SEASONALCYCLE.climatology(data, criteriaarg = [0.99,None])
 ANN = cdutil.YEAR.climatology(data, criteriaarg = [0.99,None])
-writeCLIMOFiles(data, annualcycle)
-writeSEASONFiles(data, seasonalcycle)
+#writeCLIMOFiles(data, annualcycle)
+#writeSEASONFiles(data, seasonalcycle)
 writeANNFiles(data, ANN)
 
 
