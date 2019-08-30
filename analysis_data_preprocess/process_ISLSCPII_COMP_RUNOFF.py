@@ -39,13 +39,14 @@ def createTimeAxisYear(year):
 def createTimeAxisSeasons(startYear, endYear):
     fmt = '%Y.%m.%d %H:%M:%S'
     BOUNDS=[]
-    for year in range(startYear, endYear, extended=False):
+    for year in range(startYear, endYear):
         # Start in January 
         for i in range(1,4): 
             if i is 1 and year == startYear:
                 nbMonths = 2
             else:
                 nbMonths = 3
+                year=year-1
 
             monthbounds=[]
             # [1, 3, 6, 9]
@@ -60,19 +61,21 @@ def createTimeAxisSeasons(startYear, endYear):
             s = '{:04d}.{:02d}.01 00:00:00'.format(year, startSeasonMonth + nbMonths) 
             date = datetime.datetime.strptime(s, fmt) 
             monthbounds.append(date.timetuple().tm_yday-1)  
-            BOUNDS.append(monthbounds)
+            if BOUNDS == []:
+               BOUNDS = numpy.array([monthbounds]) 
+            else:
+               BOUNDS = numpy.append(BOUNDS, numpy.array([monthbounds]),axis=0)
         ### add last bounds 
-        BOUNDS.append([BOUNDS[-1][1], 365])
-        BOUNDS=numpy.array(BOUNDS)
+        BOUNDS = numpy.append(BOUNDS,numpy.array([[BOUNDS[-1][1], 365]]),axis=0)
         print(BOUNDS)
         ### Compute center time
         CENTER=(BOUNDS[:,0]+BOUNDS[:,1])/2. -1 
 
-        time = cdms2.createAxis(CENTER)
-        time.units = 'days since {:04d}'.format(year)
-        time._bounds_ = BOUNDS
-        time.designateTime()
-        time.id = "time"
+    time = cdms2.createAxis(CENTER)
+    time.units = 'days since {:04d}'.format(year)
+    time._bounds_ = BOUNDS
+    time.designateTime()
+    time.id = "time"
     return time
 
 def createTimeAxisMonths(year, startMonth=1, endMonth=12):
