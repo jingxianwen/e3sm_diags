@@ -1,0 +1,8 @@
+Variables,Test_STD,Ref._STD,Correlation
+PRECT global GPCP_v2.2,3.135,2.489,0.819
+PRECT global GPCP_v2.3,3.135,2.517,0.824
+SWCF global ceres_ebaf_toa_v2.8,34.701,30.324,0.843
+LWCF global ceres_ebaf_toa_v2.8,15.609,14.626,0.866
+SWCF global ceres_ebaf_toa_v4.0,34.701,30.602,0.834
+LWCF global ceres_ebaf_toa_v4.0,15.609,15.55,0.871
+PSL global ERA-Interim,11.485,8.531,0.944

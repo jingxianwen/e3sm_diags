@@ -1,0 +1,1 @@
+/global/cfs/cdirs/acme/software/anaconda_envs/load_latest_e3sm_unified.sh
