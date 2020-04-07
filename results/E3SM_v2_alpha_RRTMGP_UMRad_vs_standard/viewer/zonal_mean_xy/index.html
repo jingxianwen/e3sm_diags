@@ -1,0 +1,1800 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   Zonal mean line plots
+  </title>
+  <meta content="width=device-width, intial-scale=1" name="viewport"/>
+  <meta charset="utf-8"/>
+  <link href="../viewer/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <link href="../viewer/css/viewer.css" rel="stylesheet" type="text/css"/>
+  <script src="../viewer/js/jquery-2.2.3.min.js" type="text/javascript">
+  </script>
+  <script src="../viewer/js/bootstrap.min.js" type="text/javascript">
+  </script>
+  <script src="../viewer/js/viewer.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <div id="e3sm-header" style="background-color:#dbe6c5; float:left; width:45%">
+   <p style="margin-left:5em">
+    <b>
+     E3SM Diagnostics Package v2.0.0
+     <br/>
+    </b>
+    Test:
+    <br/>
+    Reference:
+    <br/>
+    Created: 2020-04-06 18:03:46
+   </p>
+  </div>
+  <div id="e3sm-header2" style="background-color:#dbe6c5; float:right; width:55%">
+   <img alt="logo" src="./../viewer/e3sm_logo.png" style="width:201px; height:91px; background-color:#dbe6c5"/>
+  </div>
+  <div class="container">
+   <div class="row">
+    <h3>
+     Zonal mean line plots
+    </h3>
+    <hr/>
+   </div>
+   <div class="row">
+    <div class="col-sm-12">
+     <label>
+      Jump To:
+     </label>
+     <select class="form-control group_navigator">
+      <option value="group_0">
+       model_vs_model
+      </option>
+     </select>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-sm-12">
+     <table class="table">
+      <tr>
+       <th id="group_0">
+        model_vs_model
+       </th>
+       <th colspan="1">
+        Description
+       </th>
+       <th colspan="1">
+        ANN
+       </th>
+       <th colspan="1">
+        DJF
+       </th>
+       <th colspan="1">
+        MAM
+       </th>
+       <th colspan="1">
+        JJA
+       </th>
+       <th colspan="1">
+        SON
+       </th>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         PRECT global
+        </span>
+       </td>
+       <td colspan="1">
+        Total precipitation rate (convective + large-scale)
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-PRECT-ANN-global.png" href="model_vs_model/prect-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-PRECT-DJF-global.png" href="model_vs_model/prect-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-PRECT-MAM-global.png" href="model_vs_model/prect-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-PRECT-JJA-global.png" href="model_vs_model/prect-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-PRECT-SON-global.png" href="model_vs_model/prect-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         SST global
+        </span>
+       </td>
+       <td colspan="1">
+        Surface temperature (radiative)
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-SST-ANN-global.png" href="model_vs_model/sst-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-SST-DJF-global.png" href="model_vs_model/sst-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-SST-MAM-global.png" href="model_vs_model/sst-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-SST-JJA-global.png" href="model_vs_model/sst-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-SST-SON-global.png" href="model_vs_model/sst-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         SOLIN global
+        </span>
+       </td>
+       <td colspan="1">
+        Solar insolation
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-SOLIN-ANN-global.png" href="model_vs_model/solin-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-SOLIN-DJF-global.png" href="model_vs_model/solin-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-SOLIN-MAM-global.png" href="model_vs_model/solin-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-SOLIN-JJA-global.png" href="model_vs_model/solin-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-SOLIN-SON-global.png" href="model_vs_model/solin-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         ALBEDO global
+        </span>
+       </td>
+       <td colspan="1">
+        TOA albedo
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-ALBEDO-ANN-global.png" href="model_vs_model/albedo-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-ALBEDO-DJF-global.png" href="model_vs_model/albedo-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-ALBEDO-MAM-global.png" href="model_vs_model/albedo-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-ALBEDO-JJA-global.png" href="model_vs_model/albedo-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-ALBEDO-SON-global.png" href="model_vs_model/albedo-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         ALBEDOC global
+        </span>
+       </td>
+       <td colspan="1">
+        TOA albedo clear-sky
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-ALBEDOC-ANN-global.png" href="model_vs_model/albedoc-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-ALBEDOC-DJF-global.png" href="model_vs_model/albedoc-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-ALBEDOC-MAM-global.png" href="model_vs_model/albedoc-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-ALBEDOC-JJA-global.png" href="model_vs_model/albedoc-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-ALBEDOC-SON-global.png" href="model_vs_model/albedoc-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         RESTOM global
+        </span>
+       </td>
+       <td colspan="1">
+        TOM(top of model) Radiative flux
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-RESTOM-ANN-global.png" href="model_vs_model/restom-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-RESTOM-DJF-global.png" href="model_vs_model/restom-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-RESTOM-MAM-global.png" href="model_vs_model/restom-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-RESTOM-JJA-global.png" href="model_vs_model/restom-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-RESTOM-SON-global.png" href="model_vs_model/restom-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         FLUT global
+        </span>
+       </td>
+       <td colspan="1">
+        Upwelling longwave flux at top of model
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLUT-ANN-global.png" href="model_vs_model/flut-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLUT-DJF-global.png" href="model_vs_model/flut-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLUT-MAM-global.png" href="model_vs_model/flut-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLUT-JJA-global.png" href="model_vs_model/flut-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLUT-SON-global.png" href="model_vs_model/flut-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         FLUTC global
+        </span>
+       </td>
+       <td colspan="1">
+        Clearsky upwelling longwave flux at top of model
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLUTC-ANN-global.png" href="model_vs_model/flutc-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLUTC-DJF-global.png" href="model_vs_model/flutc-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLUTC-MAM-global.png" href="model_vs_model/flutc-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLUTC-JJA-global.png" href="model_vs_model/flutc-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLUTC-SON-global.png" href="model_vs_model/flutc-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         FSNTOA global
+        </span>
+       </td>
+       <td colspan="1">
+        Net solar flux at top of atmosphere
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSNTOA-ANN-global.png" href="model_vs_model/fsntoa-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSNTOA-DJF-global.png" href="model_vs_model/fsntoa-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSNTOA-MAM-global.png" href="model_vs_model/fsntoa-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSNTOA-JJA-global.png" href="model_vs_model/fsntoa-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSNTOA-SON-global.png" href="model_vs_model/fsntoa-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         FSNTOAC global
+        </span>
+       </td>
+       <td colspan="1">
+        Clearsky net solar flux at top of atmosphere
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSNTOAC-ANN-global.png" href="model_vs_model/fsntoac-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSNTOAC-DJF-global.png" href="model_vs_model/fsntoac-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSNTOAC-MAM-global.png" href="model_vs_model/fsntoac-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSNTOAC-JJA-global.png" href="model_vs_model/fsntoac-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSNTOAC-SON-global.png" href="model_vs_model/fsntoac-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         SWCF global
+        </span>
+       </td>
+       <td colspan="1">
+        Shortwave cloud forcing
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-SWCF-ANN-global.png" href="model_vs_model/swcf-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-SWCF-DJF-global.png" href="model_vs_model/swcf-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-SWCF-MAM-global.png" href="model_vs_model/swcf-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-SWCF-JJA-global.png" href="model_vs_model/swcf-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-SWCF-SON-global.png" href="model_vs_model/swcf-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         LWCF global
+        </span>
+       </td>
+       <td colspan="1">
+        Longwave cloud forcing
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-LWCF-ANN-global.png" href="model_vs_model/lwcf-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-LWCF-DJF-global.png" href="model_vs_model/lwcf-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-LWCF-MAM-global.png" href="model_vs_model/lwcf-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-LWCF-JJA-global.png" href="model_vs_model/lwcf-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-LWCF-SON-global.png" href="model_vs_model/lwcf-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         NETCF global
+        </span>
+       </td>
+       <td colspan="1">
+        TOA net cloud forcing
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-NETCF-ANN-global.png" href="model_vs_model/netcf-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-NETCF-DJF-global.png" href="model_vs_model/netcf-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-NETCF-MAM-global.png" href="model_vs_model/netcf-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-NETCF-JJA-global.png" href="model_vs_model/netcf-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-NETCF-SON-global.png" href="model_vs_model/netcf-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         ALBEDO_SRF global
+        </span>
+       </td>
+       <td colspan="1">
+        Surface albedo
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-ALBEDO_SRF-ANN-global.png" href="model_vs_model/albedo_srf-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-ALBEDO_SRF-DJF-global.png" href="model_vs_model/albedo_srf-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-ALBEDO_SRF-MAM-global.png" href="model_vs_model/albedo_srf-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-ALBEDO_SRF-JJA-global.png" href="model_vs_model/albedo_srf-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-ALBEDO_SRF-SON-global.png" href="model_vs_model/albedo_srf-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         SWCFSRF global
+        </span>
+       </td>
+       <td colspan="1">
+        Surface shortwave cloud forcing
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-SWCFSRF-ANN-global.png" href="model_vs_model/swcfsrf-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-SWCFSRF-DJF-global.png" href="model_vs_model/swcfsrf-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-SWCFSRF-MAM-global.png" href="model_vs_model/swcfsrf-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-SWCFSRF-JJA-global.png" href="model_vs_model/swcfsrf-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-SWCFSRF-SON-global.png" href="model_vs_model/swcfsrf-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         LWCFSRF global
+        </span>
+       </td>
+       <td colspan="1">
+        Surface longwave cloud forcing
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-LWCFSRF-ANN-global.png" href="model_vs_model/lwcfsrf-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-LWCFSRF-DJF-global.png" href="model_vs_model/lwcfsrf-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-LWCFSRF-MAM-global.png" href="model_vs_model/lwcfsrf-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-LWCFSRF-JJA-global.png" href="model_vs_model/lwcfsrf-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-LWCFSRF-SON-global.png" href="model_vs_model/lwcfsrf-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         FLDS global
+        </span>
+       </td>
+       <td colspan="1">
+        Downwelling longwave flux at surface
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLDS-ANN-global.png" href="model_vs_model/flds-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLDS-DJF-global.png" href="model_vs_model/flds-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLDS-MAM-global.png" href="model_vs_model/flds-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLDS-JJA-global.png" href="model_vs_model/flds-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLDS-SON-global.png" href="model_vs_model/flds-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         FLDSC global
+        </span>
+       </td>
+       <td colspan="1">
+        Clearsky Surf LW downwelling flux
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLDSC-ANN-global.png" href="model_vs_model/fldsc-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLDSC-DJF-global.png" href="model_vs_model/fldsc-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLDSC-MAM-global.png" href="model_vs_model/fldsc-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLDSC-JJA-global.png" href="model_vs_model/fldsc-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLDSC-SON-global.png" href="model_vs_model/fldsc-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         FLNS global
+        </span>
+       </td>
+       <td colspan="1">
+        Net longwave flux at surface
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLNS-ANN-global.png" href="model_vs_model/flns-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLNS-DJF-global.png" href="model_vs_model/flns-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLNS-MAM-global.png" href="model_vs_model/flns-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLNS-JJA-global.png" href="model_vs_model/flns-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLNS-SON-global.png" href="model_vs_model/flns-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         FLNSC global
+        </span>
+       </td>
+       <td colspan="1">
+        Clearsky net longwave flux at surface
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLNSC-ANN-global.png" href="model_vs_model/flnsc-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLNSC-DJF-global.png" href="model_vs_model/flnsc-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLNSC-MAM-global.png" href="model_vs_model/flnsc-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLNSC-JJA-global.png" href="model_vs_model/flnsc-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FLNSC-SON-global.png" href="model_vs_model/flnsc-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         FSDS global
+        </span>
+       </td>
+       <td colspan="1">
+        Downwelling solar flux at surface
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSDS-ANN-global.png" href="model_vs_model/fsds-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSDS-DJF-global.png" href="model_vs_model/fsds-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSDS-MAM-global.png" href="model_vs_model/fsds-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSDS-JJA-global.png" href="model_vs_model/fsds-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSDS-SON-global.png" href="model_vs_model/fsds-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         FSDSC global
+        </span>
+       </td>
+       <td colspan="1">
+        Clearsky downwelling solar flux at surface
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSDSC-ANN-global.png" href="model_vs_model/fsdsc-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSDSC-DJF-global.png" href="model_vs_model/fsdsc-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSDSC-MAM-global.png" href="model_vs_model/fsdsc-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSDSC-JJA-global.png" href="model_vs_model/fsdsc-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSDSC-SON-global.png" href="model_vs_model/fsdsc-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         FSNS global
+        </span>
+       </td>
+       <td colspan="1">
+        Net solar flux at surface
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSNS-ANN-global.png" href="model_vs_model/fsns-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSNS-DJF-global.png" href="model_vs_model/fsns-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSNS-MAM-global.png" href="model_vs_model/fsns-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSNS-JJA-global.png" href="model_vs_model/fsns-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSNS-SON-global.png" href="model_vs_model/fsns-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         FSNSC global
+        </span>
+       </td>
+       <td colspan="1">
+        Clearsky net solar flux at surface
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSNSC-ANN-global.png" href="model_vs_model/fsnsc-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSNSC-DJF-global.png" href="model_vs_model/fsnsc-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSNSC-MAM-global.png" href="model_vs_model/fsnsc-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSNSC-JJA-global.png" href="model_vs_model/fsnsc-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-FSNSC-SON-global.png" href="model_vs_model/fsnsc-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         LHFLX global
+        </span>
+       </td>
+       <td colspan="1">
+        Surface latent heat flux
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-LHFLX-ANN-global.png" href="model_vs_model/lhflx-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-LHFLX-DJF-global.png" href="model_vs_model/lhflx-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-LHFLX-MAM-global.png" href="model_vs_model/lhflx-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-LHFLX-JJA-global.png" href="model_vs_model/lhflx-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-LHFLX-SON-global.png" href="model_vs_model/lhflx-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         TMQ global
+        </span>
+       </td>
+       <td colspan="1">
+        Total (vertically integrated) precipitable water
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-TMQ-ANN-global.png" href="model_vs_model/tmq-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-TMQ-DJF-global.png" href="model_vs_model/tmq-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-TMQ-MAM-global.png" href="model_vs_model/tmq-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-TMQ-JJA-global.png" href="model_vs_model/tmq-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-TMQ-SON-global.png" href="model_vs_model/tmq-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         Z3-500mb global
+        </span>
+       </td>
+       <td colspan="1">
+        Geopotential Height (above sea level)
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-Z3-500-ANN-global.png" href="model_vs_model/z3-500mb-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-Z3-500-DJF-global.png" href="model_vs_model/z3-500mb-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-Z3-500-MAM-global.png" href="model_vs_model/z3-500mb-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-Z3-500-JJA-global.png" href="model_vs_model/z3-500mb-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-Z3-500-SON-global.png" href="model_vs_model/z3-500mb-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         T-850mb global
+        </span>
+       </td>
+       <td colspan="1">
+        Temperature
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-T-850-ANN-global.png" href="model_vs_model/t-850mb-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-T-850-DJF-global.png" href="model_vs_model/t-850mb-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-T-850-MAM-global.png" href="model_vs_model/t-850mb-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-T-850-JJA-global.png" href="model_vs_model/t-850mb-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-T-850-SON-global.png" href="model_vs_model/t-850mb-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         T-200mb global
+        </span>
+       </td>
+       <td colspan="1">
+        Temperature
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-T-200-ANN-global.png" href="model_vs_model/t-200mb-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-T-200-DJF-global.png" href="model_vs_model/t-200mb-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-T-200-MAM-global.png" href="model_vs_model/t-200mb-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-T-200-JJA-global.png" href="model_vs_model/t-200mb-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-T-200-SON-global.png" href="model_vs_model/t-200mb-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         CLDTOT_TAU1.3_ISCCP global
+        </span>
+       </td>
+       <td colspan="1">
+        ISCCP: total cloud fraction with tau &gt;1.3
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_ISCCP-ANN-global.png" href="model_vs_model/cldtot_tau13_isccp-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_ISCCP-DJF-global.png" href="model_vs_model/cldtot_tau13_isccp-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_ISCCP-MAM-global.png" href="model_vs_model/cldtot_tau13_isccp-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_ISCCP-JJA-global.png" href="model_vs_model/cldtot_tau13_isccp-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_ISCCP-SON-global.png" href="model_vs_model/cldtot_tau13_isccp-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         CLDTOT_TAU1.3_9.4_ISCCP global
+        </span>
+       </td>
+       <td colspan="1">
+        ISCCP: total cloud fraction with 1.3&lt; tau &lt; 9.4
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_9.4_ISCCP-ANN-global.png" href="model_vs_model/cldtot_tau13_94_isccp-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_9.4_ISCCP-DJF-global.png" href="model_vs_model/cldtot_tau13_94_isccp-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_9.4_ISCCP-MAM-global.png" href="model_vs_model/cldtot_tau13_94_isccp-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_9.4_ISCCP-JJA-global.png" href="model_vs_model/cldtot_tau13_94_isccp-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_9.4_ISCCP-SON-global.png" href="model_vs_model/cldtot_tau13_94_isccp-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         CLDTOT_TAU9.4_ISCCP global
+        </span>
+       </td>
+       <td colspan="1">
+        ISCCP: total cloud fraction with tau &gt;9.4
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU9.4_ISCCP-ANN-global.png" href="model_vs_model/cldtot_tau94_isccp-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU9.4_ISCCP-DJF-global.png" href="model_vs_model/cldtot_tau94_isccp-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU9.4_ISCCP-MAM-global.png" href="model_vs_model/cldtot_tau94_isccp-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU9.4_ISCCP-JJA-global.png" href="model_vs_model/cldtot_tau94_isccp-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU9.4_ISCCP-SON-global.png" href="model_vs_model/cldtot_tau94_isccp-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         CLDTOT_TAU1.3_MISR global
+        </span>
+       </td>
+       <td colspan="1">
+        MISR: total cloud fraction with tau &gt;1.3
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_MISR-ANN-global.png" href="model_vs_model/cldtot_tau13_misr-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_MISR-DJF-global.png" href="model_vs_model/cldtot_tau13_misr-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_MISR-MAM-global.png" href="model_vs_model/cldtot_tau13_misr-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_MISR-JJA-global.png" href="model_vs_model/cldtot_tau13_misr-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_MISR-SON-global.png" href="model_vs_model/cldtot_tau13_misr-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         CLDTOT_TAU1.3_9.4_MISR global
+        </span>
+       </td>
+       <td colspan="1">
+        MISR: total cloud fraction with 1.3&lt; tau &lt; 9.4
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_9.4_MISR-ANN-global.png" href="model_vs_model/cldtot_tau13_94_misr-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_9.4_MISR-DJF-global.png" href="model_vs_model/cldtot_tau13_94_misr-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_9.4_MISR-MAM-global.png" href="model_vs_model/cldtot_tau13_94_misr-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_9.4_MISR-JJA-global.png" href="model_vs_model/cldtot_tau13_94_misr-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_9.4_MISR-SON-global.png" href="model_vs_model/cldtot_tau13_94_misr-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         CLDTOT_TAU9.4_MISR global
+        </span>
+       </td>
+       <td colspan="1">
+        MISR: total cloud fraction with tau &gt;9.4
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU9.4_MISR-ANN-global.png" href="model_vs_model/cldtot_tau94_misr-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU9.4_MISR-DJF-global.png" href="model_vs_model/cldtot_tau94_misr-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU9.4_MISR-MAM-global.png" href="model_vs_model/cldtot_tau94_misr-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU9.4_MISR-JJA-global.png" href="model_vs_model/cldtot_tau94_misr-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU9.4_MISR-SON-global.png" href="model_vs_model/cldtot_tau94_misr-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         CLDLOW_TAU1.3_MISR global
+        </span>
+       </td>
+       <td colspan="1">
+        MISR: low cloud fraction with tau &gt;1.3
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDLOW_TAU1.3_MISR-ANN-global.png" href="model_vs_model/cldlow_tau13_misr-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDLOW_TAU1.3_MISR-DJF-global.png" href="model_vs_model/cldlow_tau13_misr-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDLOW_TAU1.3_MISR-MAM-global.png" href="model_vs_model/cldlow_tau13_misr-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDLOW_TAU1.3_MISR-JJA-global.png" href="model_vs_model/cldlow_tau13_misr-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDLOW_TAU1.3_MISR-SON-global.png" href="model_vs_model/cldlow_tau13_misr-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         CLDLOW_TAU1.3_9.4_MISR global
+        </span>
+       </td>
+       <td colspan="1">
+        MISR: low cloud fraction with 1.3&lt; tau &lt; 9.4
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDLOW_TAU1.3_9.4_MISR-ANN-global.png" href="model_vs_model/cldlow_tau13_94_misr-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDLOW_TAU1.3_9.4_MISR-DJF-global.png" href="model_vs_model/cldlow_tau13_94_misr-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDLOW_TAU1.3_9.4_MISR-MAM-global.png" href="model_vs_model/cldlow_tau13_94_misr-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDLOW_TAU1.3_9.4_MISR-JJA-global.png" href="model_vs_model/cldlow_tau13_94_misr-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDLOW_TAU1.3_9.4_MISR-SON-global.png" href="model_vs_model/cldlow_tau13_94_misr-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         CLDLOW_TAU9.4_MISR global
+        </span>
+       </td>
+       <td colspan="1">
+        MISR: low cloud fraction with tau &gt;9.4
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDLOW_TAU9.4_MISR-ANN-global.png" href="model_vs_model/cldlow_tau94_misr-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDLOW_TAU9.4_MISR-DJF-global.png" href="model_vs_model/cldlow_tau94_misr-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDLOW_TAU9.4_MISR-MAM-global.png" href="model_vs_model/cldlow_tau94_misr-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDLOW_TAU9.4_MISR-JJA-global.png" href="model_vs_model/cldlow_tau94_misr-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDLOW_TAU9.4_MISR-SON-global.png" href="model_vs_model/cldlow_tau94_misr-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         CLDTOT_TAU1.3_MODIS global
+        </span>
+       </td>
+       <td colspan="1">
+        MODIS: total cloud fraction with tau &gt;1.3
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_MODIS-ANN-global.png" href="model_vs_model/cldtot_tau13_modis-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_MODIS-DJF-global.png" href="model_vs_model/cldtot_tau13_modis-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_MODIS-MAM-global.png" href="model_vs_model/cldtot_tau13_modis-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_MODIS-JJA-global.png" href="model_vs_model/cldtot_tau13_modis-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_MODIS-SON-global.png" href="model_vs_model/cldtot_tau13_modis-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         CLDTOT_TAU1.3_9.4_MODIS global
+        </span>
+       </td>
+       <td colspan="1">
+        MODIS: total cloud fraction with 1.3&lt; tau &lt; 9.4
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_9.4_MODIS-ANN-global.png" href="model_vs_model/cldtot_tau13_94_modis-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_9.4_MODIS-DJF-global.png" href="model_vs_model/cldtot_tau13_94_modis-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_9.4_MODIS-MAM-global.png" href="model_vs_model/cldtot_tau13_94_modis-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_9.4_MODIS-JJA-global.png" href="model_vs_model/cldtot_tau13_94_modis-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU1.3_9.4_MODIS-SON-global.png" href="model_vs_model/cldtot_tau13_94_modis-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         CLDTOT_TAU9.4_MODIS global
+        </span>
+       </td>
+       <td colspan="1">
+        MODIS: total cloud fraction with tau &gt;9.4
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU9.4_MODIS-ANN-global.png" href="model_vs_model/cldtot_tau94_modis-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU9.4_MODIS-DJF-global.png" href="model_vs_model/cldtot_tau94_modis-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU9.4_MODIS-MAM-global.png" href="model_vs_model/cldtot_tau94_modis-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU9.4_MODIS-JJA-global.png" href="model_vs_model/cldtot_tau94_modis-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_TAU9.4_MODIS-SON-global.png" href="model_vs_model/cldtot_tau94_modis-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         CLDHGH_TAU1.3_MODIS global
+        </span>
+       </td>
+       <td colspan="1">
+        MODIS: high cloud fraction with tau &gt;1.3
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDHGH_TAU1.3_MODIS-ANN-global.png" href="model_vs_model/cldhgh_tau13_modis-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDHGH_TAU1.3_MODIS-DJF-global.png" href="model_vs_model/cldhgh_tau13_modis-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDHGH_TAU1.3_MODIS-MAM-global.png" href="model_vs_model/cldhgh_tau13_modis-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDHGH_TAU1.3_MODIS-JJA-global.png" href="model_vs_model/cldhgh_tau13_modis-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDHGH_TAU1.3_MODIS-SON-global.png" href="model_vs_model/cldhgh_tau13_modis-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         CLDHGH_TAU1.3_9.4_MODIS global
+        </span>
+       </td>
+       <td colspan="1">
+        MODIS: high cloud fraction with 1.3&lt; tau &lt; 9.4
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDHGH_TAU1.3_9.4_MODIS-ANN-global.png" href="model_vs_model/cldhgh_tau13_94_modis-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDHGH_TAU1.3_9.4_MODIS-DJF-global.png" href="model_vs_model/cldhgh_tau13_94_modis-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDHGH_TAU1.3_9.4_MODIS-MAM-global.png" href="model_vs_model/cldhgh_tau13_94_modis-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDHGH_TAU1.3_9.4_MODIS-JJA-global.png" href="model_vs_model/cldhgh_tau13_94_modis-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDHGH_TAU1.3_9.4_MODIS-SON-global.png" href="model_vs_model/cldhgh_tau13_94_modis-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         CLDHGH_TAU9.4_MODIS global
+        </span>
+       </td>
+       <td colspan="1">
+        MODIS: high cloud fraction with tau &gt;9.4
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDHGH_TAU9.4_MODIS-ANN-global.png" href="model_vs_model/cldhgh_tau94_modis-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDHGH_TAU9.4_MODIS-DJF-global.png" href="model_vs_model/cldhgh_tau94_modis-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDHGH_TAU9.4_MODIS-MAM-global.png" href="model_vs_model/cldhgh_tau94_modis-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDHGH_TAU9.4_MODIS-JJA-global.png" href="model_vs_model/cldhgh_tau94_modis-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDHGH_TAU9.4_MODIS-SON-global.png" href="model_vs_model/cldhgh_tau94_modis-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         CLDHGH_CAL global
+        </span>
+       </td>
+       <td colspan="1">
+        Lidar High-level Cloud Fraction
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDHGH_CAL-ANN-global.png" href="model_vs_model/cldhgh_cal-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDHGH_CAL-DJF-global.png" href="model_vs_model/cldhgh_cal-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDHGH_CAL-MAM-global.png" href="model_vs_model/cldhgh_cal-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDHGH_CAL-JJA-global.png" href="model_vs_model/cldhgh_cal-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDHGH_CAL-SON-global.png" href="model_vs_model/cldhgh_cal-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         CLDLOW_CAL global
+        </span>
+       </td>
+       <td colspan="1">
+        Lidar Low-level Cloud Fraction
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDLOW_CAL-ANN-global.png" href="model_vs_model/cldlow_cal-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDLOW_CAL-DJF-global.png" href="model_vs_model/cldlow_cal-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDLOW_CAL-MAM-global.png" href="model_vs_model/cldlow_cal-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDLOW_CAL-JJA-global.png" href="model_vs_model/cldlow_cal-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDLOW_CAL-SON-global.png" href="model_vs_model/cldlow_cal-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         CLDMED_CAL global
+        </span>
+       </td>
+       <td colspan="1">
+        Lidar Mid-level Cloud Fraction
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDMED_CAL-ANN-global.png" href="model_vs_model/cldmed_cal-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDMED_CAL-DJF-global.png" href="model_vs_model/cldmed_cal-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDMED_CAL-MAM-global.png" href="model_vs_model/cldmed_cal-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDMED_CAL-JJA-global.png" href="model_vs_model/cldmed_cal-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDMED_CAL-SON-global.png" href="model_vs_model/cldmed_cal-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         CLDTOT_CAL global
+        </span>
+       </td>
+       <td colspan="1">
+        Lidar Total Cloud Fraction
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_CAL-ANN-global.png" href="model_vs_model/cldtot_cal-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_CAL-DJF-global.png" href="model_vs_model/cldtot_cal-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_CAL-MAM-global.png" href="model_vs_model/cldtot_cal-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_CAL-JJA-global.png" href="model_vs_model/cldtot_cal-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-CLDTOT_CAL-SON-global.png" href="model_vs_model/cldtot_cal-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+      <tr class="output-row">
+       <td>
+        <span>
+         TGCLDLWP_OCN global
+        </span>
+       </td>
+       <td colspan="1">
+        Total grid-box cloud liquid water path
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-TGCLDLWP_OCN-ANN-global.png" href="model_vs_model/tgcldlwp_ocn-global/ann.html">
+         ANN
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-TGCLDLWP_OCN-DJF-global.png" href="model_vs_model/tgcldlwp_ocn-global/djf.html">
+         DJF
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-TGCLDLWP_OCN-MAM-global.png" href="model_vs_model/tgcldlwp_ocn-global/mam.html">
+         MAM
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-TGCLDLWP_OCN-JJA-global.png" href="model_vs_model/tgcldlwp_ocn-global/jja.html">
+         JJA
+        </a>
+       </td>
+       <td colspan="1">
+        <a data-preview="../../zonal_mean_xy/model_vs_model/-TGCLDLWP_OCN-SON-global.png" href="model_vs_model/tgcldlwp_ocn-global/son.html">
+         SON
+        </a>
+       </td>
+      </tr>
+     </table>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

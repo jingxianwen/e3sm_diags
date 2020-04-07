@@ -18,8 +18,8 @@ param.reference_title = 'RRTMGP_standard'# will show on plots
 
 #============= test =============
 #param.test_data_path = '/global/project/projectdirs/acme/acme_diags/test_model_data_for_acme_diags/climatology/'
-param.test_data_path = '/global/cscratch1/sd/xianwen/E3SM_simulations/E3SM_v2_alpha_AMIP_RRTMGP_UMRad_emis_debug.ne30_ne30.cori-knl/archive/climo/'
-param.test_name = 'E3SM_v2_alpha_AMIP_RRTMGP_UMRad_emis_debug.ne30_ne30.cori-knl' #match output file name
+param.test_data_path = '/global/cscratch1/sd/xianwen/E3SM_simulations/E3SM_v2_alpha_AMIP_RRTMGP_UMRad.ne30_ne30.cori-knl/archive/climo/'
+param.test_name = 'E3SM_v2_alpha_AMIP_RRTMGP_UMRad.ne30_ne30.cori-knl' #match output file name
 param.test_title = 'RRTMGP_UMRad'# will show on plots (central upper)
 param.short_test_name = ' '# will show on plots (central left)
 
@@ -44,6 +44,6 @@ runner.sets_to_run = ['lat_lon','zonal_mean_xy', 'zonal_mean_2d', 'polar']
 #use below to run lat_lon map only
 #runner.sets_to_run = ['lat_lon']
 
-param.seasons = ["ANN","DJF", "JJA"]   #all seasons ["ANN","DJF", "MAM", "JJA", "SON"] will run,if comment out"
+param.seasons = ["ANN","DJF","MAM", "JJA","SON"]   #all seasons ["ANN","DJF", "MAM", "JJA", "SON"] will run,if comment out"
 
 runner.run_diags([param])

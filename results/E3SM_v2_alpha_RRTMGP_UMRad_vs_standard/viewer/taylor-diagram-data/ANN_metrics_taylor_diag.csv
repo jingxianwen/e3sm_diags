@@ -1,0 +1,7 @@
+Variables,Test_STD,Ref._STD,Correlation
+PRECT global,2.258,2.298,0.989
+SWCF global,19.935,20.109,0.992
+LWCF global,10.7,10.577,0.988
+PSL global,10.381,10.41,0.998
+TREFHT global,13.816,13.92,1.0
+TREFHT land,18.33,18.424,1.0
