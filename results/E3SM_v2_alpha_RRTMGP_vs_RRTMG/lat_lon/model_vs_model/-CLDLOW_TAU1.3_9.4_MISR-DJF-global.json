@@ -1,0 +1,1 @@
+{"ref": {"min": 0.0, "max": 100.0, "mean": 15.714301905002117}, "ref_regrid": {"min": 0.0, "max": 100.0, "mean": 15.714301905002117, "std": 10.50498586623187}, "test": {"min": NaN, "max": NaN, "mean": NaN}, "test_regrid": {"min": NaN, "max": NaN, "mean": NaN, "std": NaN}, "diff": {"min": NaN, "max": NaN, "mean": NaN}, "misc": {"rmse": NaN, "corr": NaN}, "unit": "%"}
